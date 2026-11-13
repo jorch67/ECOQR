@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10251d">
+<title>ECOQR | Reciclá con inteligencia</title>
+<style>
+:root{--bg:#f4f7f4;--ink:#17251e;--muted:#627168;--green:#16834b;--dark:#10251d;--card:#fff;--line:#e4ebe5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+header{background:linear-gradient(125deg,#10251d,#174b35);color:white;padding:22px max(22px,calc((100% - 1120px)/2));position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffffff20;border-radius:50%;right:-100px;top:-180px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;z-index:1}.brand{font-weight:900;font-size:1.25rem;letter-spacing:.08em}.brand span{color:#8de0a9}.nav a{color:#e8f5ec;text-decoration:none;font-size:.92rem;margin-left:20px}.hero{max-width:1120px;margin:54px auto 40px;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:800;color:#9ce5b3}.hero h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.03;max-width:760px;margin:12px 0 18px;letter-spacing:-.045em}.hero p{max-width:650px;color:#d3e5d9;font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:12px 19px;font-weight:800;background:#a5efbd;color:#123322}.btn.secondary{background:#ffffff15;color:white;border:1px solid #ffffff35}
+main{max-width:1120px;margin:0 auto;padding:35px 22px 80px}.intro{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:stretch;margin-bottom:32px}.intro-card,.tip-card,.info-card,.quiz{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 8px 28px #18332208}.intro-card h2{margin:0 0 8px;font-size:1.6rem}.intro-card p{margin:0;color:var(--muted)}.tip-card{background:#e8f5ec;border:0}.tip-card strong{display:block;color:#17643b;font-size:1.1rem;margin-bottom:6px}.section-title{margin:54px 0 18px}.section-title small{color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.14em}.section-title h2{font-size:2rem;line-height:1.15;margin:5px 0}.section-title p{color:var(--muted);margin:6px 0 0}
+.containers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.container-card{background:white;border:1px solid var(--line);border-radius:20px;padding:21px;text-decoration:none;color:inherit;transition:.2s}.container-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #18332212}.container-card .symbol{font-size:2rem}.container-card h3{margin:7px 0 2px}.container-card p{margin:0;color:var(--muted);font-size:.93rem}.pill{display:inline-block;border-radius:999px;padding:4px 10px;font-size:.76rem;font-weight:900;margin-top:12px}.blue .pill{background:#e4f1ff;color:#1764a8}.yellow .pill{background:#fff3cb;color:#8b6500}.green .pill{background:#e0f5e7;color:#16713b}
+.recycle-section{scroll-margin-top:20px;margin-top:65px}.section-head{border-radius:24px;padding:30px;color:white;display:flex;align-items:center;justify-content:space-between;gap:20px}.section-head h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:0}.section-head p{margin:5px 0 0;opacity:.9}.section-head .big{font-size:4rem}.blue .section-head{background:linear-gradient(120deg,#1766a8,#2996d2)}.yellow .section-head{background:linear-gradient(120deg,#a87900,#e5b928);color:#211b08}.green .section-head{background:linear-gradient(120deg,#14713b,#2ba65d)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:18px}.info-card h3{margin:0 0 12px;display:flex;gap:9px;align-items:center}.info-card ul{padding-left:21px;margin:0}.info-card li{margin:7px 0}.info-card p{color:var(--muted);margin:8px 0 0}.good{border-top:4px solid #25a45b}.bad{border-top:4px solid #dc665c}.prepare{border-top:4px solid #e2b52b}.use{border-top:4px solid #4a91c8}.examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.tag{background:#f0f4f1;border:1px solid #e4ebe5;border-radius:9px;padding:6px 10px;font-size:.88rem;font-weight:650}
+.quiz{margin-top:22px;background:#fdfefd}.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.quiz h3{font-size:1.45rem;margin:0}.quiz .sub{color:var(--muted);margin:4px 0 18px}.question{font-weight:800;margin:12px 0}.answers{display:grid;gap:9px}.answer{border:1px solid #dce6de;background:white;padding:12px 14px;border-radius:12px;text-align:left;font:inherit;cursor:pointer;color:var(--ink);transition:.15s}.answer:hover{border-color:#42a56b;background:#f5fbf6}.answer:disabled{cursor:default}.answer.correct{background:#e5f7eb;border-color:#2b9b55}.answer.wrong{background:#fff0ee;border-color:#d76a5d}.feedback{font-weight:750;margin-top:13px;min-height:28px}.next{border:0;border-radius:999px;background:#173d2a;color:white;padding:11px 17px;font-weight:800;cursor:pointer;margin-top:12px}.next:disabled{opacity:.4;cursor:not-allowed}.score{font-size:.85rem;color:var(--muted);font-weight:750}.finish{font-weight:850;color:#17643b;margin-top:12px}
+footer{background:#10251d;color:#d4e5d9;padding:30px 22px;text-align:center}footer strong{color:#a5efbd}footer p{margin:5px auto;max-width:700px;font-size:.9rem}
+@media(max-width:760px){.nav nav{display:none}.hero{margin:40px auto 28px}.intro,.containers,.grid2{grid-template-columns:1fr}.section-head{padding:23px}.section-head .big{font-size:3rem}.intro-card,.tip-card,.info-card,.quiz{padding:20px}.section-title{margin-top:42px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav"><div class="brand">ECO<span>QR</span></div><nav><a href="#inicio">Inicio</a><a href="#contenedores">Contenedores</a><a href="#azul">Azul</a><a href="#amarillo">Amarillo</a><a href="#verde">Verde</a></nav></div>
+  <div class="hero" id="inicio"><div class="eyebrow">Pequeñas acciones · Gran impacto</div><h1>Separar hoy.<br>Transformar mañana.</h1><p>Escaneá, aprendé y descubrí dónde va cada residuo. ECOQR convierte cada contenedor en una oportunidad para cuidar el ambiente.</p><div class="hero-actions"><a class="btn" href="#contenedores">Explorar contenedores ↓</a><a class="btn secondary" href="#como-funciona">¿Cómo funciona?</a></div></div>
+</header>
+<main>
+  <section class="intro" id="como-funciona"><div class="intro-card"><h2>¿Qué es ECOQR?</h2><p>Es una propuesta educativa que utiliza códigos QR para brindar información clara sobre la separación de residuos. Al escanear el código de un contenedor, se abre una guía con materiales permitidos, materiales que deben evitarse, consejos para prepararlos y una actividad para comprobar lo aprendido.</p></div><div class="tip-card"><strong>♻️ Antes de tirar, pensá.</strong>Separar correctamente ayuda a recuperar materiales, reducir la cantidad de basura y aprovechar mejor los recursos.</div></section>
+  <section id="contenedores"><div class="section-title"><small>Guía de separación</small><h2>Elegí un contenedor</h2><p>Cada color representa un tipo de residuo. Tocá una tarjeta para conocer más.</p></div>
+  <div class="containers">
+    <a class="container-card blue" href="#azul"><div class="symbol">📄</div><h3>Contenedor azul</h3><p>Papel y cartón limpios y secos.</p><span class="pill">RECICLABLES</span></a>
+    <a class="container-card yellow" href="#amarillo"><div class="symbol">🧴</div><h3>Contenedor amarillo</h3><p>Envases de plástico y metales.</p><span class="pill">RECICLABLES</span></a>
+    <a class="container-card green" href="#verde"><div class="symbol">🍃</div><h3>Contenedor verde</h3><p>Residuos orgánicos compostables.</p><span class="pill">ORGÁNICOS</span></a>
+  </div></section>
+
+  <section class="recycle-section blue" id="azul">
+    <div class="section-head"><div><div class="eyebrow">QR 1 · Papel y cartón</div><h2>Contenedor azul</h2><p>El papel puede tener muchas vidas si lo separamos bien.</p></div><div class="big">📄</div></div>
+    <div class="grid2">
+      <article class="info-card good"><h3>✅ ¿Qué se puede tirar?</h3><ul><li>Hojas de papel y apuntes.</li><li>Diarios, revistas y folletos.</li><li>Cajas de cartón y envases de cartón.</li><li>Cartulinas y sobres de papel.</li></ul><div class="examples"><span class="tag">📃 Hojas</span><span class="tag">📰 Diarios</span><span class="tag">📦 Cajas</span></div></article>
+      <article class="info-card bad"><h3>🚫 ¿Qué NO se debe tirar?</h3><ul><li>Papel higiénico, servilletas o pañuelos usados.</li><li>Papel o cartón con grasa, comida o aceite.</li><li>Papel plastificado, encerado o metalizado.</li><li>Envases de cartón con restos de comida o líquidos.</li></ul><p>Si está muy sucio o mojado, puede contaminar otros materiales reciclables.</p></article>
+      <article class="info-card prepare"><h3>🧹 ¿Cómo prepararlos?</h3><ul><li>Separá el papel de otros residuos.</li><li>Comprobá que esté limpio y seco.</li><li>Retirá restos de comida, cintas o plásticos cuando sea posible.</li><li>Aplastá las cajas para ocupar menos espacio.</li></ul></article>
+      <article class="info-card use"><h3>🌱 ¿Qué pasa después?</h3><p>El papel y el cartón recuperados pueden clasificarse, triturarse y procesarse para fabricar nuevas hojas, cajas y otros productos. Reciclarlos reduce la necesidad de utilizar materias primas nuevas.</p></article>
+    </div>
+    <div class="quiz" data-quiz="azul"><div class="quiz-top"><h3>🧠 Poné a prueba lo aprendido</h3><span class="score">Pregunta 1 de 1</span></div><p class="sub">Una pregunta rápida para comprobar si reconocés los residuos de este contenedor.</p><div class="question">¿Cuál de estos residuos corresponde al contenedor azul?</div><div class="answers"><button class="answer" data-correct="false">Una servilleta usada con restos de comida</button><button class="answer" data-correct="true">Una caja de cartón limpia y seca</button><button class="answer" data-correct="false">Una botella de plástico</button></div><div class="feedback" aria-live="polite"></div><button class="next" disabled>Ver resultado</button><div class="result"></div></div>
+  </section>
+
+  <section class="recycle-section yellow" id="amarillo">
+    <div class="section-head"><div><div class="eyebrow">QR 2 · Plásticos y metales</div><h2>Contenedor amarillo</h2><p>Los envases recuperados pueden convertirse en nuevos recursos.</p></div><div class="big">🧴</div></div>
+    <div class="grid2">
+      <article class="info-card good"><h3>✅ ¿Qué se puede tirar?</h3><ul><li>Botellas y envases de plástico, como PET.</li><li>Bidones y botellas de productos de limpieza, vacíos.</li><li>Latas de aluminio y de conserva.</li><li>Tapitas, bandejas y envases metálicos aceptados localmente.</li></ul><div class="examples"><span class="tag">🧴 Botellas PET</span><span class="tag">🥫 Latas</span><span class="tag">🥤 Envases</span></div></article>
+      <article class="info-card bad"><h3>🚫 ¿Qué NO se debe tirar?</h3><ul><li>Juguetes, baldes y objetos de plástico que no sean envases.</li><li>Electrodomésticos, cables o aparatos electrónicos.</li><li>Pilas y baterías.</li><li>Envases con restos de sustancias peligrosas o productos químicos.</li></ul><p>Los objetos que no son envases pueden requerir otro circuito de recolección.</p></article>
+      <article class="info-card prepare"><h3>🧹 ¿Cómo prepararlos?</h3><ul><li>Vaciá completamente los envases.</li><li>Enjuagalos si tienen restos de comida o bebida.</li><li>Dejalos escurrir para que estén secos.</li><li>Aplastá botellas y envases para ahorrar espacio, si es posible.</li></ul></article>
+      <article class="info-card use"><h3>🌱 ¿Qué pasa después?</h3><p>Los materiales se separan por tipo. Los plásticos pueden triturarse y transformarse en materia prima para nuevos productos; los metales pueden fundirse y reutilizarse. Así se aprovechan recursos que de otro modo terminarían como basura.</p></article>
+    </div>
+    <div class="quiz" data-quiz="amarillo"><div class="quiz-top"><h3>🧠 Poné a prueba lo aprendido</h3><span class="score">Pregunta 1 de 1</span></div><p class="sub">Elegí la opción correcta.</p><div class="question">¿Cómo debe estar una botella de plástico antes de depositarla?</div><div class="answers"><button class="answer" data-correct="false">Llena de líquido</button><button class="answer" data-correct="false">Con restos de comida en su interior</button><button class="answer" data-correct="true">Vacía, limpia en lo posible y escurrida</button></div><div class="feedback" aria-live="polite"></div><button class="next" disabled>Ver resultado</button><div class="result"></div></div>
+  </section>
+
+  <section class="recycle-section green" id="verde">
+    <div class="section-head"><div><div class="eyebrow">QR 3 · Residuos orgánicos</div><h2>Contenedor verde</h2><p>Los restos orgánicos pueden volver a la tierra mediante el compostaje.</p></div><div class="big">🍃</div></div>
+    <div class="grid2">
+      <article class="info-card good"><h3>✅ ¿Qué se puede tirar?</h3><ul><li>Cáscaras y restos de frutas y verduras.</li><li>Yerba, saquitos de té y café molido.</li><li>Cáscaras de huevo trituradas.</li><li>Hojas secas, pasto y pequeños restos de poda.</li></ul><div class="examples"><span class="tag">🍌 Cáscaras</span><span class="tag">🥕 Verduras</span><span class="tag">🧉 Yerba</span></div></article>
+      <article class="info-card bad"><h3>🚫 ¿Qué NO se debe tirar?</h3><ul><li>Plásticos, vidrios y metales.</li><li>Pañales, colillas y residuos sanitarios.</li><li>Aceites y líquidos en grandes cantidades.</li><li>Carne, huesos y lácteos, salvo que el sistema local de compostaje los admita.</li></ul><p>Las reglas pueden variar según el programa de compostaje de cada lugar.</p></article>
+      <article class="info-card prepare"><h3>🧹 ¿Cómo prepararlos?</h3><ul><li>Separá los restos orgánicos sin mezclarlos con plástico.</li><li>Cortá los restos grandes en pedazos pequeños.</li><li>Escurrí el exceso de líquido.</li><li>Mezclá materiales húmedos (restos de frutas) con materiales secos (hojas secas o cartón sin tinta plástica), si hacés compost en casa.</li></ul></article>
+      <article class="info-card use"><h3>🌱 ¿Qué es el compostaje?</h3><p>Es un proceso natural en el que microorganismos descomponen restos orgánicos y los convierten en compost, un material que mejora el suelo y aporta nutrientes. Necesita aireación, humedad adecuada y tiempo.</p></article>
+    </div>
+    <div class="quiz" data-quiz="verde"><div class="quiz-top"><h3>🧠 Poné a prueba lo aprendido</h3><span class="score">Pregunta 1 de 1</span></div><p class="sub">¡Último desafío! Pensá qué residuo puede convertirse en compost.</p><div class="question">¿Cuál de estos residuos es adecuado para compostar?</div><div class="answers"><button class="answer" data-correct="false">Una botella de plástico</button><button class="answer" data-correct="true">Cáscaras de frutas y verduras</button><button class="answer" data-correct="false">Una lata de aluminio</button></div><div class="feedback" aria-live="polite"></div><button class="next" disabled>Ver resultado</button><div class="result"></div></div>
+  </section>
+  <section class="section-title"><small>Un compromiso cotidiano</small><h2>El mejor residuo es el que podemos evitar.</h2><p>Antes de desechar algo, preguntate si podés reducir su consumo, reutilizarlo o separarlo correctamente. La participación de cada persona hace la diferencia.</p></section>
+</main>
+<footer><strong>ECOQR · Educación ambiental interactiva</strong><p>Proyecto educativo para aprender a separar residuos de manera sencilla y responsable.</p><p>Importante: los sistemas de colores y los materiales aceptados pueden variar según el municipio. Seguí siempre las indicaciones del servicio local de recolección.</p></footer>
+<script>
+document.querySelectorAll('.quiz').forEach(quiz=>{
+  const buttons=[...quiz.querySelectorAll('.answer')],feedback=quiz.querySelector('.feedback'),next=quiz.querySelector('.next'),result=quiz.querySelector('.result');
+  let chosen=false, wasCorrect=false;
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+    if(chosen)return;chosen=true;
+    const correct=btn.dataset.correct==='true';wasCorrect=correct;
+    buttons.forEach(b=>{b.disabled=true;if(b.dataset.correct==='true')b.classList.add('correct')});
+    if(!correct)btn.classList.add('wrong');
+    feedback.textContent=correct?'¡Excelente! Respuesta correcta.':'No exactamente. La opción correcta está marcada en verde. ¡Ahora ya lo sabés!';
+    next.disabled=false;
+  }));
+  next.addEventListener('click',()=>{
+    const correct=wasCorrect;
+    result.textContent=correct?'¡Felicitaciones! Completaste esta actividad.':'¡Actividad completada! Recordá el consejo y seguí aprendiendo.';
+    next.disabled=true;next.textContent='Completado';
+  });
+});
+</script>
+</body>
+</html>
